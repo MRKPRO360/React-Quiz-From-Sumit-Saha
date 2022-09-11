@@ -22,7 +22,6 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log(user, "from onAuthStateChanged observer parameter");
       setCurrentUser(user);
       setLoading(false);
     });
@@ -39,7 +38,6 @@ export function AuthProvider({ children }) {
     });
 
     const user = auth.currentUser;
-    console.log(user, "from auth.currentUser");
     setCurrentUser({ ...user });
   }
 
