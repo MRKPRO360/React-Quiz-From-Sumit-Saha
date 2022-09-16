@@ -18,7 +18,7 @@ export default function Videos() {
           next={() => setPage(page + 8)}
         >
           {videos.map((video) => (
-            <Link to="/quiz" key={nanoid()}>
+            <Link to={`/quiz/${video.youtubeID}`} key={nanoid()}>
               <Video title={video.title} noq={video.noq} id={video.youtubeID} />
             </Link>
           ))}

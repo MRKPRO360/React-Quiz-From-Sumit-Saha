@@ -16,7 +16,6 @@ export default function useVideoList(page) {
   const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
-    console.count();
     async function fetchVideos() {
       const db = getDatabase();
       const videosRef = ref(db, "videos");
